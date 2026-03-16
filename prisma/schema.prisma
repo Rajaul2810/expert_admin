@@ -1,0 +1,39 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  name      String
+  email     String   @unique
+  role      String
+  status    String
+  joinedAt  DateTime @map("joined_at")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([email])
+  @@index([role, status])
+  @@map("users")
+}
+
+model Expert {
+  id       String  @id @default(cuid())
+  name     String
+  category String
+  rating   Float
+  sessions Int
+  duration String
+  price    String
+  image    String
+  bio      String
+
+  @@index([category])
+  @@index([rating(sort: Desc)])
+  @@map("experts")
+}

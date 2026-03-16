@@ -42,7 +42,7 @@ export default function NotFound() {
 
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row sm:gap-3">
             <Button asChild size="lg" className="gap-2 animate-in fade-in slide-in-from-left-4 duration-700 delay-700">
-              <Link href="/">
+              <Link href="/admin">
                 <Home className="size-4" />
                 Go Home
               </Link>
@@ -57,23 +57,6 @@ export default function NotFound() {
               <ArrowLeft className="size-4" />
               Go Back
             </Button>
-          </div>
-
-          <div className="pt-8 animate-in fade-in duration-1000 delay-1000">
-            <p className="mb-4 text-sm text-muted-foreground">
-              You might be looking for:
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-2">
-              <Button variant="ghost" size="sm" asChild>
-                <Link href="/experts">Experts</Link>
-              </Button>
-              <Button variant="ghost" size="sm" asChild>
-                <Link href="/about">About</Link>
-              </Button>
-              <Button variant="ghost" size="sm" asChild>
-                <Link href="/contact">Contact</Link>
-              </Button>
-            </div>
           </div>
         </div>
       </div>
